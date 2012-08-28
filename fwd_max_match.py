@@ -4,8 +4,10 @@
 @author: andyHu
 2012-8-27
 '''
-from common import u
-CODEC='utf-8'
+def u(s, encoding):
+    if isinstance(s, unicode):
+        return s
+    return unicode(s, encoding)
 
 def forword_max_match(words_dict, max_len, origin_str):
     '''forward max match segment'''
